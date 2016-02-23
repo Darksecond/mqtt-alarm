@@ -1,0 +1,4 @@
+{
+  "id": "morning-weekend",
+  "recurrence": "0 15 9 * * 6,7"
+}
