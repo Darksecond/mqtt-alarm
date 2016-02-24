@@ -4,6 +4,8 @@ let schedule = require('node-schedule');
 let mqtt = require('mqtt');
 let fs = require('fs');
 
+let config = require('./config.json');
+
 class Alarm {
   constructor(json, client) {
     this.id = json.id;
@@ -27,7 +29,7 @@ class Alarm {
 };
 
 let alarms = [];
-let mqttClient = mqtt.connect('mqtt://test.mosquitto.org');
+let mqttClient = mqtt.connect(config.mqtt);
 
 fs.readdir('alarms', function(err, files){
   if(err)
